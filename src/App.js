@@ -1,8 +1,31 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
+import SidePanel from './sidePanel/SidePanel'
+
 import './App.css';
 
  class App extends Component {
+
+  moc = {
+    form: {
+      placeholders: [
+        {
+          id: 0,
+          title: 'first section',
+          description: 'some description'
+        }, {
+          id: 1,
+          title: 'secont section',
+          description: 'some desc second section'
+        }, {
+          id: 2,
+          title: 'third section',
+          description: 'some desc third section'
+        }
+      ]
+    }
+  }
+
 
   render() {
     return (
@@ -23,9 +46,6 @@ import './App.css';
                     </div>
                     <div>
                       <p className="editable">
-                      {
-                        
-                      }
                         Duis sed odio sit amet nibh vulputate cursus 
                         a sit amet mauris. Morbi accumsan ipsum velit.
                       </p>
@@ -143,7 +163,7 @@ import './App.css';
           </section>
         <section className="panel-section">
           <div className="side-panel">
-          
+            <SidePanel moc={this.moc}/>
           </div>
       </section>
       </div>
