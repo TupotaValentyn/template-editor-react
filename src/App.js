@@ -8,8 +8,24 @@ import './App.css';
 
  class App extends Component {
 
-  passMoc = data => () => {
-    this.setState({moc: data})
+  passMoc = () => val => {
+
+    const id = +val.target.id
+    const title = val.target.value
+
+    console.log(id, title)
+
+    this.setState(state => {
+      const placeholders = state.placeholders.map(item => {
+        if (item.id === id) {
+          return {...item, title: title}
+        }
+        return item
+      })
+      return {
+        placeholders
+      }
+    })
   }
 
   state = {
@@ -33,7 +49,7 @@ import './App.css';
   render() {
     return (
       <div className="wrapper">
-        <Template />
+        <Template moc={this.state.placeholders}/>
         <section className="panel-section">
           <div className="side-panel">
             <SidePanel moc={this.state.placeholders} passMoc={this.passMoc}/>

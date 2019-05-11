@@ -8,6 +8,7 @@ class SidePanel extends Component {
   }
   
   render () {
+      const {moc} = this.props
     return (
         <section className="site">
           <div className='parent'>
@@ -18,7 +19,7 @@ class SidePanel extends Component {
                 <div className="col-xs-12 col-sm-5 col-md-5">
                   <div className="hero-content">
                     <div>
-                      <h1 className="editable">header</h1>
+                      <h1 className="editable">{moc[0].title}</h1>
                       <div className="panel">
 
                       </div>
