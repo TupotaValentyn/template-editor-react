@@ -40,6 +40,21 @@ class SidePanel extends Component {
           onChange={passMoc()}
           />
       })}
+      {
+        moc.map(el => {
+
+          const fields =  Object.keys(el)
+          fields.shift()
+          const values = Object.values(el)
+          values.shift()
+          return values.map(item => {
+            return <input
+              className="panel-input"
+              placeholder={item}
+            />
+          })
+        })
+      }
     </form>)
   }
 }

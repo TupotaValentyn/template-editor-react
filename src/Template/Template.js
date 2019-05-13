@@ -1,10 +1,42 @@
 import React, {Component} from 'react'
 import './Template.css'
 
-
 class SidePanel extends Component {
-  state = {
 
+  constructor(props) {
+    super(props)
+    const {moc} = this.props
+
+    this.state = {
+      inter: null,
+      content: moc[0].title
+    }
+
+
+    const contentRender = function* (context) {
+      
+      console.log(this)
+      console.log(context.state.content)
+
+
+      moc.map(el => {
+        const values = Object.values(el)
+        values.shift()
+        
+
+        // values.forEach(item => {
+        //   this.setState({content: 1})
+        // })
+      })
+      
+      while(true) {
+        yield context.state.content
+      }
+    
+    }
+
+    this.state.inter = contentRender(this)
+  
   }
   
   render () {
@@ -20,6 +52,7 @@ class SidePanel extends Component {
                   <div className="hero-content">
                     <div>
                       <h1 className="editable">{moc[0].title}</h1>
+                      <h2>{this.state.inter.next().value}</h2>
                       <div className="panel">
 
                       </div>
