@@ -12,12 +12,15 @@ class SidePanel extends Component {
       content: moc[0].title
     }
 
+    const range = () => {
+      return this.state.content
+    }
 
-    const contentRender = function* (context) {
+
+    const contentRender = function* () {
       
-      console.log(this)
-      console.log(context.state.content)
-
+      const test = range()
+      console.log(test)
 
       moc.map(el => {
         const values = Object.values(el)
@@ -30,13 +33,13 @@ class SidePanel extends Component {
       })
       
       while(true) {
-        yield context.state.content
+        yield test
       }
     
     }
 
-    this.state.inter = contentRender(this)
-  
+    this.state.inter = contentRender()
+    
   }
   
   render () {
