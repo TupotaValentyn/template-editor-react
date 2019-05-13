@@ -61,6 +61,7 @@ class SidePanel extends Component {
                       </div>
                     </div>
                     <div>
+                      <h3>{this.state.inter.next().value}</h3>
                       <p className="editable">
                         Duis sed odio sit amet nibh vulputate cursus 
                         a sit amet mauris. Morbi accumsan ipsum velit.
