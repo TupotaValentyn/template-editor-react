@@ -5,7 +5,7 @@ export default function FunTemplate (mock) {
 
   const {moc} = mock
   // console.log(moc)
-  let [state, setState] = useState(0)
+  const [state, setState] = useState(0)
 
   function count () {
     internal.next()
