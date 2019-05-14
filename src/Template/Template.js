@@ -1,7 +1,9 @@
-import React, {Component} from 'react'
+import React, {useState, Component} from 'react'
 import './Template.css'
+import FunTemplate from '../functionalTemplate/funTemplate.js'
 
-class SidePanel extends Component {
+
+class Template extends Component {
 
   constructor(props) {
     super(props)
@@ -46,6 +48,9 @@ class SidePanel extends Component {
       const {moc} = this.props
     return (
         <section className="site">
+        <div>
+          <FunTemplate moc = {moc}/>
+        </div>
           <div className='parent'>
             <section id="hero" className="hero hero-8 pb-0">
             <div className="container">
@@ -182,4 +187,4 @@ class SidePanel extends Component {
   }
 }
 
-export default SidePanel;
+export default Template;
